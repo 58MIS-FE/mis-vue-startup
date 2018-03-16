@@ -1,3 +1,5 @@
+A template with webpack + vuejs 2 setup for projects startup.
+
 ## 本地运行
 
 ```
