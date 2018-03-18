@@ -19,7 +19,7 @@ module.exports = {
             "type": "string",
             "required": false,
             "message": "Project description",
-            "default": "A new Vue.js project"
+            "default": "A new Vue.js project make use of mis-cli"
         },
         "state": {
             "type": "list",
