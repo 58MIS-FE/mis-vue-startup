@@ -21,20 +21,28 @@ module.exports = {
             "message": "Project description",
             "default": "A new Vue.js project make use of mis-cli"
         },
+        "change_state": {
+            "type": "confirm",
+            "message": "Use state manage for your app?"
+        },
         "state": {
-            "when": "state",
+            "when": "change_state",
             "type": "list",
-            "message": "state manage for your app",
+            "message": "Pick a state manage",
             "choices": [{
                 "name": "Vuex (https://github.com/vuejs/vuex)",
                 "value": "vuex",
                 "short": "vuex"
             }]
         },
+        "change_request": {
+            "type": "confirm",
+            "message": "Use request library for your app?"
+        },
         "request": {
-            "when": "request",
+            "when": "change_request",
             "type": "list",
-            "message": "request library for your app",
+            "message": "Pick a request library",
             "choices": [{
                 "name": "axios (https://github.com/axios/axios)",
                 "value": "axios",
