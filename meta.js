@@ -22,6 +22,7 @@ module.exports = {
             "default": "A new Vue.js project make use of mis-cli"
         },
         "state": {
+            "when": "state",
             "type": "list",
             "message": "state manage for your app",
             "choices": [{
@@ -30,17 +31,21 @@ module.exports = {
                 "short": "vuex"
             }]
         },
+        "request": {
+            "when": "request",
+            "type": "list",
+            "message": "request library for your app",
+            "choices": [{
+                "name": "axios (https://github.com/axios/axios)",
+                "value": "axios",
+                "short": "axios"
+            }]
+        },
         "port": {
             "type": "string",
             "required": false,
             "message": "client port",
-            "default": 3000
-        },
-        "prefix": {
-            "type": "string",
-            "required": false,
-            "message": "the host name for Ajax request",
-            "default": ''
+            "default": 5858
         }
     },
     "filters": {
