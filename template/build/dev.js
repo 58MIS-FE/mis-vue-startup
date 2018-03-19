@@ -25,7 +25,7 @@ if (config.isMultiplePage) {
 
 const webpackConfig = require('./webpack.dev.config');
 
-const port = process.env.PORT || config.port || 4001,
+const port = process.env.PORT || {{ port }},
     url = `http://localhost:${port}`;
 
 function addHRM(entry) {

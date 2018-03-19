@@ -46,14 +46,17 @@ module.exports = {
     },
     // 要打包的外部资源库
     library: [
-        'axios',
+        {{# if_eq request 'axios' }}
+        "axios",
+        {{/if_eq}}
         'vue',
+        {{# if_eq state 'vuex' }}
+        "vuex",
+        {{/if_eq}}
         'vue-router'
     ],
     // 要引进外部资源库的页面(为空则全部引入)
     libraryEntry: [],
-    // 本地开发端口
-    port: 5858,
     // 本地开发代理,默认转发本地的1111
     proxy: {
         '/api': {
