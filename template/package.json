@@ -85,7 +85,7 @@
         {{# if_eq request 'axios' }}
         "axios": "^0.18.0",
         {{/if_eq}}
-        "webpack-merge": "^4.1.0",
+        "webpack-merge": "^4.1.0"
     },
     "engines": {
         "node": "> 8.1.4",
