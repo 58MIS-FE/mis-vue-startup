@@ -75,13 +75,17 @@
         {{# if_eq ui 'element' }}
         "element-ui": "^2.0.7",
         {{/if_eq}}
+        {{# if_eq ui 'iview' }}
+        "iview": "^2.11.0",
+        {{/if_eq}}
         {{# if_eq state 'vuex' }}
         "vuex": "^3.0.1",
         "vuex-router-sync": "^5.0.0",
         {{/if_eq}}
         {{# if_eq request 'axios' }}
-        "axios": "^0.18.0"
+        "axios": "^0.18.0",
         {{/if_eq}}
+        "webpack-merge": "^4.1.0",
     },
     "engines": {
         "node": "> 8.1.4",
