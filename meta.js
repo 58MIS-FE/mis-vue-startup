@@ -47,6 +47,10 @@ module.exports = {
                 "name": "element (https://github.com/ElemeFE/element)",
                 "value": "element",
                 "short": "element"
+            },{
+                "name": "iview (https://github.com/iview/iview)",
+                "value": "iview",
+                "short": "iview"
             }]
         },
         "change_request": {
