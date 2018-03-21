@@ -26,14 +26,7 @@
     ],
     "dependencies": {
         "vue": "^2.5.16",
-        "vue-router": "^3.0.1",
-        {{# if_eq state 'vuex' }}
-        "vuex": "^3.0.1",
-        "vuex-router-sync": "^5.0.0",
-        {{/if_eq}}
-        {{# if_eq request 'axios' }}
-        "axios": "^0.18.0"
-        {{/if_eq}}
+        "vue-router": "^3.0.1"
     },
     "devDependencies": {
         "add-asset-html-webpack-plugin": "^2.0.1",
@@ -78,7 +71,17 @@
         "webpack-bundle-analyzer": "^2.8.3",
         "webpack-dev-middleware": "^1.11.0",
         "webpack-hot-middleware": "^2.18.2",
-        "webpack-merge": "^4.1.0"
+        "webpack-merge": "^4.1.0",
+        {{# if_eq ui 'element' }}
+        "element-ui": "^2.0.7",
+        {{/if_eq}}
+        {{# if_eq state 'vuex' }}
+        "vuex": "^3.0.1",
+        "vuex-router-sync": "^5.0.0",
+        {{/if_eq}}
+        {{# if_eq request 'axios' }}
+        "axios": "^0.18.0"
+        {{/if_eq}}
     },
     "engines": {
         "node": "> 8.1.4",

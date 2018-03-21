@@ -35,6 +35,20 @@ module.exports = {
                 "short": "vuex"
             }]
         },
+        "change_ui": {
+            "type": "confirm",
+            "message": "Use ui library for your app?"
+        },
+        "ui": {
+            "when": "change_ui",
+            "type": "list",
+            "message": "Pick a ui library",
+            "choices": [{
+                "name": "element (https://github.com/ElemeFE/element)",
+                "value": "element",
+                "short": "element"
+            }]
+        },
         "change_request": {
             "type": "confirm",
             "message": "Use request library for your app?"

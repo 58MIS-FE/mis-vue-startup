@@ -102,7 +102,6 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: /node_modules/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
@@ -112,25 +111,27 @@ module.exports = {
                 })
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/i,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'url-loader',
-                    options: {
-                        limit: 10000,
-                        name: pathJoin(config.staticAssets, 'images/[name].[hash:8].[ext]')
-                    }
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: pathJoin(config.staticAssets, 'img/[name].[hash:7].[ext]')
                 }
             },
             {
-                test: /\.(woff2?|eot|ttf|otf)$/i,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'url-loader',
-                    options: {
-                        limit: 10000,
-                        name: pathJoin(config.staticAssets, 'fonts/[name].[hash:8].[ext]')
-                    }
+                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: pathJoin(config.staticAssets, 'media/[name].[hash:7].[ext]')
+                }
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: pathJoin(config.staticAssets, 'fonts/[name].[hash:7].[ext]')
                 }
             }
         ]
