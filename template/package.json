@@ -71,7 +71,6 @@
         "webpack-bundle-analyzer": "^2.8.3",
         "webpack-dev-middleware": "^1.11.0",
         "webpack-hot-middleware": "^2.18.2",
-        "webpack-merge": "^4.1.0",
         {{# if_eq ui 'element' }}
         "element-ui": "^2.0.7",
         {{/if_eq}}
