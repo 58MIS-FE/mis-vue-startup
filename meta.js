@@ -35,6 +35,10 @@ module.exports = {
                 "short": "vuex"
             }]
         },
+        "change_mock": {
+            "type": "confirm",
+            "message": "Use mock server for your app?"
+        },
         "change_ui": {
             "type": "confirm",
             "message": "Use ui library for your app?"
@@ -75,6 +79,7 @@ module.exports = {
         }
     },
     "filters": {
+        "mock/**/*": "change_mock",
         "src/vuex/**/*": "state === 'vuex'"
     },
     "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\nDocumentation can be found at https://github.com/58MIS-FE/mis-vue-startup"
