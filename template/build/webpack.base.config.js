@@ -57,6 +57,17 @@ function pathCDNJoin(...args) {
     return process.env.NODE_ENV == 'production-c' ? args.join('/') : path.posix.join(...args);
 }
 
+const createLintingRule = () => ({
+    test: /\.(js|vue)$/,
+    loader: 'eslint-loader',
+    enforce: 'pre',
+    include: [path.resolve(__dirname, '..', 'src')],
+    options: {
+        formatter: require('eslint-friendly-formatter'),
+        emitWarning: !config.showEslintErrorsInOverlay
+    }
+});
+
 module.exports = {
     entry: Object.assign({}, config.entry, commonsChunk),
 
@@ -77,7 +88,9 @@ module.exports = {
     externals: config.externals,
 
     module: {
-        rules: [{
+        rules: [
+            ...(config.useEslint ? [createLintingRule()] : []),
+            {
                 test: /\.vue$/,
                 exclude: /node_modules/,
                 use: {

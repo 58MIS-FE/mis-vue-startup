@@ -53,5 +53,10 @@ module.exports = {
     'build:c': Object.assign({
         sourceMap: '#source-map'
     }, baseConfig),
-    dev: Object.assign({}, baseConfig)
+    dev: Object.assign({
+        {{# if_eq lint }}
+        useEslint: true,
+        showEslintErrorsInOverlay: false
+        {{/if_eq}}
+    }, baseConfig)
 }
