@@ -54,9 +54,9 @@ module.exports = {
         sourceMap: '#source-map'
     }, baseConfig),
     dev: Object.assign({
-        {{# if_eq lint }}
+        {{#lint }}
         useEslint: true,
         showEslintErrorsInOverlay: false
-        {{/if_eq}}
+        {{/lint }}
     }, baseConfig)
 }
