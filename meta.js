@@ -39,6 +39,10 @@ module.exports = {
             "type": "confirm",
             "message": "Use mock server for your app?"
         },
+        "lint": {
+            "type": "confirm",
+            "message": "Use eslint for your app?"
+        },
         "change_ui": {
             "type": "confirm",
             "message": "Use ui library for your app?"
