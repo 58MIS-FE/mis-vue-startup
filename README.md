@@ -29,7 +29,7 @@
 - 支持图片、图标字体等资源的编译
 - 支持一行命令产出待部署资源
 - 支持CDN资源定位打包
-- [ ] 可以进行代码规则校验
+- 可以进行代码规则校验
 - [ ] 支持 mocha 测试用例运行
 - [ ] 支持 LESS 预处理器
 - [ ] 支持浏览器源码调试
@@ -180,6 +180,21 @@ npm run build:vendors
 └── page2.html
 ```
 
+#### Mis-vue-cli Chooice
+```
+  ? Which template do you need? mis-vue-cli
+  ? Project name
+  ? Author
+  ? Project version
+  ? Project description 
+  ? Use state manage for your app? 
+  ? Use mock server for your app?
+  ? Use eslint for your app?
+  ? Use ui library for your app? 
+  ? Use request library for your app? 
+  ? client port 5858
+```
+
 
 ## 配置
 
@@ -230,8 +245,6 @@ npm run build:vendors
         // 'index',
         // 'page2'
     ],
-    // 本地开发端口
-    port: 5858,
     // 本地开发代理，结合mock，默认转发为本地1111
     proxy: {
         '/api': {
@@ -259,7 +272,6 @@ npm run build:vendors
 * `commons` <Object> 公众模块（默认情况下common／js文件下的文件作为`commons chunk`打包，在 `isOpenSyncImport` 参数启用的情况下将失效）
 * `library` <Array> 要打包的外部资源库（填写模块名或引用路径）
 * `libraryEntry` <Array> 要引进外部资源库的页面(为空则全部引入，填写页面名称，即入口文件夹名称)
-* `port` <Number> 本地开发端口（默认为 `8009`）
 * `proxy` <Object> 本地代理（参照[http-proxy-middleware文档](https://github.com/chimurai/http-proxy-middleware)）
 
 
@@ -273,6 +285,6 @@ npm run build:vendors
 - [x] [CSS modules](https://github.com/outpunk/postcss-modules)
 - [x] [Less](https://github.com/less/less.js)
 - [x] [Sass](https://github.com/sass/node-sass)
-- [ ] [Eslint](https://github.com/eslint/eslint)
+- [x] [Eslint](https://github.com/eslint/eslint)
 - [ ] [Autoprefixer](https://github.com/postcss/autoprefixer)
 - [ ] [PostCSS](https://github.com/postcss/postcss)
