@@ -6,11 +6,12 @@ const path = require('path');
 
 module.exports = {
     // 多页配置
-    isMultiplePage: true,
+    isMultiplePage: false,
 
-    pageUrl: {
-        '/admin': path.resolve(__dirname, '../src/admin/index.html')
-    },
+    //多页面打包入口
+    multiplePage:[],
+    //想要打包的页面
+    entryPage: 'index',
     // 是否启用异步加载功能
     isOpenSyncImport: true,
     //开启CDN资源引用
@@ -57,6 +58,8 @@ module.exports = {
     ],
     // 要引进外部资源库的页面(为空则全部引入)
     libraryEntry: [],
+    //是否参看源码  参看'#source-map' 不参看：false
+    sourceMap: false,
     // 本地开发代理,默认转发本地的1111
     proxy: {
         '/api': {

@@ -12,6 +12,12 @@ let { mapObject, arrToObj } = require('./util');
 function getPath(...args) {
     return path.join(base.assetsRoot, ...args);
 }
+//判断是否在数组中
+function IsInArray(arr,val){
+    if(arr.length == 0) return true
+      let testStr = arr.join(",")
+  　　return testStr.indexOf(val)!= -1;
+}
 
 function getEntrySetting() {
     let result = {
@@ -26,32 +32,32 @@ function getEntrySetting() {
         .found
         .forEach(file => {
             let pageName = file.split('/')[0];
-
-            result.entry[pageName] = getPath(pageName, 'index.js');
-            result.template.push(getPath(file));
+            if (IsInArray(base.multiplePage,pageName)) {
+              result.entry[pageName] = getPath(pageName, 'index.js');
+              result.template.push(getPath(file));
+            }
         });
-
     return result;
 }
 
 let setting = getEntrySetting();
 
 let baseConfig = Object.assign({}, base, {
-    entry: base.isMultiplePage ? setting.entry : { index: getPath('index/js/index.js') },
-    template: base.isMultiplePage ? setting.template : [getPath('index/index.html')],
+    entry: base.isMultiplePage ? setting.entry : { index: getPath(`${base.entryPage}/index.js`) },
+    template: base.isMultiplePage ? setting.template : [getPath(`${base.entryPage}/index.html`)],
     outputPath: base.buildRoot,
     commonAlias: mapObject(base.commonAlias, value => getPath(value))
 });
 
 module.exports = {
     build: Object.assign({
-        sourceMap: '#source-map'
+        sourceMap: base.sourceMap
     }, baseConfig),
     'build:d': Object.assign({
-        sourceMap: '#source-map'
+        sourceMap: base.sourceMap
     }, baseConfig),
     'build:c': Object.assign({
-        sourceMap: '#source-map'
+        sourceMap: base.sourceMap
     }, baseConfig),
     dev: Object.assign({
         {{#lint }}

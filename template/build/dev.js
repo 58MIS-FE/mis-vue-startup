@@ -15,13 +15,7 @@ let config = require('../config').dev,
     pageUrl = config.pageUrl,
     app = express();
 
-if (config.isMultiplePage) {
-    Object.keys(pageUrl).forEach(function(item) {
-        app.get(item, (req, res) => {
-            res.sendFile(pageUrl[item]);
-        })
-    });
-}
+
 
 const webpackConfig = require('./webpack.dev.config');
 

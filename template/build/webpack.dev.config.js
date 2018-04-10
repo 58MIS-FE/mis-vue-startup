@@ -18,6 +18,8 @@ const
 
 const config = nowConfig();
 
+const base = require('../config/base.js')
+
 const commonsChunk = commonsChunkName();
 
 module.exports = webpackMerge(baseWebpackConfig, {
@@ -35,7 +37,8 @@ module.exports = webpackMerge(baseWebpackConfig, {
         new FriendlyErrorsPlugin()
     ].concat(config.template.map(template => {
         let chunkName = template.split(path.sep).slice(-2)[0];
-
+          //判断是否为单页面应用
+        base.isMultiplePage ? chunkName = chunkName : chunkName = 'index'
         return new HtmlWebpackPlugin({
             filename: chunkName + '.html',
             template: template,
