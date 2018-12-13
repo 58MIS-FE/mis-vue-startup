@@ -203,7 +203,7 @@ npm run build:vendors
 ### 默认配置项
 
 ``` js
-{
+{   //是否开启多页
     isMultiplePage: true,
     // 是否启用异步加载功能
     isOpenSyncImport: true,
