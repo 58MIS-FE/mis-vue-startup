@@ -1,5 +1,6 @@
 /**
- * @description util工具集
+ * @description util 
+ * @author zhangzhen09
  */
 
 const
@@ -9,6 +10,14 @@ const
 
 const config = require('../config');
 
+
+/**
+ * webpack 配置文件
+ * @param {*} config 
+ * @param {*} before 
+ * @param {*} after 
+ * @param {*} stdout 
+ */
 function webpackCompile(config, before, after, stdout = true) {
     return webpack(config, (err, stats) => {
         if (err) throw err;

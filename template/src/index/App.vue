@@ -1,20 +1,15 @@
-<style>
-    @import './assets/theme.css';
-</style>
-
 <template>
-    <div id="app" ref="myApp">
-        <p>fdd</p>
-        {{# if_eq ui 'element' }}
-        <el-button type="primary">主要按钮</el-button>
-        {{/if_eq}}
-        {{# if_eq ui 'iview' }}
-        <Button type="primary">Primary</Button>
-        {{/if_eq}}
+    <div id="app" ref="myApp" class='app'>
+        <h1>欢迎使用bic-vue-cli脚手架</h1>
         <router-view></router-view>
     </div>
 </template>
-
-<script>
-    export default {};
-</script>
+<style>
+    @import './assets/theme.css';
+    .app{
+      width: 800px;
+      margin: 250px auto;
+      background: #ddd;
+      text-align:center;
+    }
+</style>

@@ -1,20 +1,20 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Log from '../../common/log';
+
+import Index from '../views/index';
 
 Vue.use(VueRouter);
 
 /* webpackChunkName: "home-index-component" */
 
 const routes = [{
-        path: '*',
-        redirect: '/home'
-    },
-    {
-        path: '/home',
-        component: resolve => require(['../views/home/index.vue'],resolve)
-    }
-];
+    path: '*',
+    redirect: '/index'
+},
+{
+    path: '/index',
+    component: Index
+}];
 
 const router = new VueRouter({
     routes
@@ -27,9 +27,7 @@ router.beforeEach((route, from, next) => {
     next();
 });
 
-router.afterEach((to, from) => {
-    //pv 统计
-    Log.init(to.path)
+/*  可以作pv统计   */
+router.afterEach((to, from) => {});
 
-});
 export default router;

@@ -1,7 +1,3 @@
-<style scoped>
-
-</style>
-
 <template>
     <div class="page__error">
         错误页面404
@@ -20,3 +16,6 @@
         }
     }
 </script>
+<style scoped>
+
+</style>

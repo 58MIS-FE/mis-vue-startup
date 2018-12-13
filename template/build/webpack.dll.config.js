@@ -1,3 +1,9 @@
+/**
+ * @description 静态资源抽取 
+ * @author zhangzhen09
+ */
+
+
 const
     path = require('path'),
     webpack = require('webpack');
