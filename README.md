@@ -203,8 +203,13 @@ npm run build:vendors
 ### 默认配置项
 
 ``` js
-{   //是否开启多页
-    isMultiplePage: true,
+{  
+     // 多页配置
+    isMultiplePage: false,
+    //多页面打包入口  文件名
+    multiplePage:[],
+    //想要打包的页面
+    entryPage: 'index',
     // 是否启用异步加载功能
     isOpenSyncImport: true,
     //开启CDN资源引用
