@@ -182,17 +182,17 @@ npm run build:vendors
 
 #### bic-vue-cli Chooice
 ```
-  ? Which template do you need? mis-vue-cli
-  ? Project name
-  ? Author
-  ? Project version
-  ? Project description 
-  ? Use state manage for your app? 
-  ? Use mock server for your app?
-  ? Use eslint for your app?
-  ? Use ui library for your app? 
-  ? Use request library for your app? 
-  ? client port 5858
+  ? Which template do you need? bic-vue-cli         // 选择vue项目
+  ? Project name                                    // 项目名称
+  ? Author                                          // 项目作者
+  ? Project version                                 // 项目版本
+  ? Project description                             // 项目描述
+  ? Use state manage for your app?                  // 是否是使用vuex状态管理
+  ? Use mock server for your app?                   // 是否启动mock数据
+  ? Use eslint for your app?                        // 是否使用代码校验
+  ? Use ui library for your app?                    // 选择UI库 element-ui 或者 ivew
+  ? Use request library for your app?               // 是否使用http请求
+  ? client port 5858                                // 端口号
 ```
 
 
