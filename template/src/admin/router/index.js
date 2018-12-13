@@ -11,16 +11,6 @@ const home = () =>
     import ('../views/home/index.vue');
 
 const routes = [{
-<<<<<<< HEAD
-        path: '*',
-        redirect: '/home'
-    },
-    {
-        path: '/home',
-        component: home
-    }
-];
-=======
     path: '*',
     redirect: '/index'
 },
@@ -28,7 +18,6 @@ const routes = [{
     path: '/index',
     component: Index
 }];
->>>>>>> dev-zz
 
 const router = new VueRouter({
     routes
