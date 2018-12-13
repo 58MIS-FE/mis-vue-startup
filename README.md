@@ -180,7 +180,7 @@ npm run build:vendors
 └── page2.html
 ```
 
-#### Mis-vue-cli Chooice
+#### bic-vue-cli Chooice
 ```
   ? Which template do you need? mis-vue-cli
   ? Project name
