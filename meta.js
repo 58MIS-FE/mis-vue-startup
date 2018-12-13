@@ -19,7 +19,7 @@ module.exports = {
             "type": "string",
             "required": false,
             "message": "Project description",
-            "default": "A new Vue.js project make use of mis-cli"
+            "default": "A new Vue.js project make use of bic-cli"
         },
         "change_state": {
             "type": "confirm",
