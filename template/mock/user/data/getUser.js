@@ -15,5 +15,5 @@ module.exports = {
             "leader": true
         }]
     },
-    "message": "执行成功"
-}
+    "message": "执行成功" 
+};

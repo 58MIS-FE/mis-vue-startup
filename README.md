@@ -1,4 +1,4 @@
-# mis-vue-cli
+# bic-vue-cli
 
 ## 简介
 
@@ -14,7 +14,7 @@
 脚手架使用 [DllPlugin + DllReferencePlugin](https://doc.webpack-china.org/plugins/dll-plugin/) 打包外部资源包，优化打包速度，`manifest` 及打包后的文件包均放置在 `static/libs/js` 目录下，也可进入脚本自行配置路径。
 
 
-## mis-vue-cli 功能特性
+## bic-vue-cli 功能特性
 
 - 可以解析 es6-7-8 语法新特性
 - 支持 cssnext
@@ -180,7 +180,7 @@ npm run build:vendors
 └── page2.html
 ```
 
-#### Mis-vue-cli Chooice
+#### bic-vue-cli Chooice
 ```
   ? Which template do you need? mis-vue-cli
   ? Project name

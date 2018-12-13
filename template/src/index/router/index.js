@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Log from '../../common/log';
+
+import Index from '../views/index';
 
 Vue.use(VueRouter);
 
@@ -10,6 +11,7 @@ const home = () =>
     import ('../views/home/index.vue');
 
 const routes = [{
+<<<<<<< HEAD
         path: '*',
         redirect: '/home'
     },
@@ -18,6 +20,15 @@ const routes = [{
         component: home
     }
 ];
+=======
+    path: '*',
+    redirect: '/index'
+},
+{
+    path: '/index',
+    component: Index
+}];
+>>>>>>> dev-zz
 
 const router = new VueRouter({
     routes
@@ -30,9 +41,7 @@ router.beforeEach((route, from, next) => {
     next();
 });
 
-router.afterEach((to, from) => {
-    //pv 统计
-    Log.init(to.path)
+/*  可以作pv统计   */
+router.afterEach((to, from) => {});
 
-});
 export default router;

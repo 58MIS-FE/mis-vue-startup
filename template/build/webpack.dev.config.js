@@ -1,6 +1,8 @@
 /**
- * @description 开发环境webpack配置
+ * @description 开发环境 
+ * @author zhangzhen09
  */
+
 
 const
     path = require('path'),

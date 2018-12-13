@@ -1,3 +1,8 @@
+/**
+ * @description 基本配置文件 
+ * @author zhangzhen09
+ */
+
 const
     path = require('path'),
     webpack = require('webpack'),
@@ -11,10 +16,17 @@ const { nowConfig, pathJoin } = require('./util');
 
 const config = nowConfig();
 
+/**
+ * 获取路径
+ * @param {Array} args 
+ */
 function getPath(...args) {
     return pathJoin(config.assetsRoot, ...args);
 }
 
+/**
+ * 获取公共打包
+ */
 function getCommonsChunk() {
     return new Glob('!(_)*/!(_)*.js', {
             cwd: getPath('common'),
@@ -28,6 +40,9 @@ const commonsChunk = config.isOpenSyncImport ? {} : Object.assign({
     common: getCommonsChunk()
 }, config.commons);
 
+/**
+ * 设置打包体积
+ */
 function getCommonsChunkPluginSetting() {
     return config.isOpenSyncImport ?
         config.minChunkSize ? [
@@ -49,6 +64,7 @@ function getCommonsChunkPluginSetting() {
 /**
  * 获取CDN资源前缀
  */
+
 function getCdnUrl() {
     return process.env.NODE_ENV == 'production-c' ? config.cdnUrl : config.publicPath;
 }
@@ -67,6 +83,10 @@ const createLintingRule = () => ({
         emitWarning: !config.showEslintErrorsInOverlay
     }
 });
+
+
+process.env.NODE_ENV === 'production' ? config.publicPath = config.publicPath  : config.publicPath = '/';
+
 
 module.exports = {
     entry: Object.assign({}, config.entry, commonsChunk),
